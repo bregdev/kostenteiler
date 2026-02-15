@@ -16,3 +16,4 @@ def session() -> Session:
     session = TestSession()
     yield session
     session.close()
+    engine.dispose()
