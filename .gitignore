@@ -20,5 +20,9 @@ build/
 htmlcov/
 .pytest_cache/
 
+# Project docs (local only)
+CLAUDE.md
+Konzept.md
+
 # Alembic
 alembic/versions/__pycache__/
