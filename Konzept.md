@@ -6,6 +6,21 @@ CLI-basierte App zum Aufteilen von Kosten innerhalb einer Gruppe (max. 10 Person
 Typischer Anwendungsfall: Wochenendtrip mit Freunden -- jeder zahlt verschiedene Dinge,
 am Ende wird fair abgerechnet.
 
+## Offene Fragen an Claude Code 
+
+Wie läuft das Deployment und der Einstieg in die App hier lokal ab?
+- Antwort:
+  1. PostgreSQL lokal starten: `brew services start postgresql@17`
+  2. DB erstellen: `createdb kostenteiler`
+  3. `.env` anlegen mit `DATABASE_URL=postgresql://localhost:5432/kostenteiler`
+  4. venv aktivieren: `source .venv/bin/activate`
+  5. Dependencies: `pip install -r requirements.txt`
+  6. Alembic-Migration ausführen: `alembic upgrade head`
+  7. CLI nutzen: `python -m src.cli trip create "Mein Trip"`
+
+Alles klar - und dies mache ich im Projektordner?
+- Antwort: Ja, alles im Projektordner `/Users/joelbregy/AI_repo/kostenteiler/`. Dort liegt die `.env`, das `alembic.ini`, und von dort werden alle Befehle ausgeführt.
+
 ## User-Flow
 
 ### 1. Trip erstellen
